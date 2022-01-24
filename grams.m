@@ -5,8 +5,6 @@
 
 function [Q, R] = grams(V)
 
-  V = [v1 v2 v3];
-
   [m, n] = size(V);
 
   Q = zeros(m,n);
