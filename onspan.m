@@ -1,22 +1,21 @@
 function [D] = onspan(v, W) 
 
-    [m, n] = size(W);
-    U = zeros(m, n);
-    
-    % proj v unto w
-    for i = (1 : v)
-        U(:, i) = W(:, i)/(norm(W(:, i)));
-    end
-    
-%    convert the rest
-%    c1 = u1'*v;
-%    c2 = u2'*v;
-%    c3 = u3'*v;
-%    p1 = c1*u1 + c2*u2 +c3*u3;
-%    p2 = U*U'*v;
-   
-%    d1 = norm(v - p1);
-%    d2 = norm(v - p2);
-    
+  format long
 
+  [m, n] = size(W);
+  U = zeros(m, n);
+  C = zeros(1, n);
+
+  % proj v unto w
+  for i = (1 : n)
+      U(:, i) = W(:, i)/(norm(W(:, i)));
+      C(:, i) = U(:,i)'*v;
+  end
+
+  p1 = U*C';
+  p2 = U*U'*v;
+
+  % norm of residual = distance
+  d2 = norm(v - p2);
+    
 end
