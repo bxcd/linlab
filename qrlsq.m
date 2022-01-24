@@ -4,18 +4,18 @@
 
 function [x, d1] = qrlsq(Q, R, b)
 
-    X = rref([R (Q'*b)])
-    [~, n] = size(b)
-    [~, q] = size(X)
-    x = X(:, (q - n + 1):q)
+    X = rref([R (Q'*b)]);
+    [~, n] = size(b);
+    [~, q] = size(X);
+    x = X(:, (q - n + 1):q);
 
-    A = Q*R
-    P = A*((A'*A)^(-1))*A'
+    A = Q*R;
+    P = A*((A'*A)^(-1))*A';
 
-    p1 = A*x
-    p2 = P*b
+    p1 = A*x;
+    p2 = P*b;
 
-    d1 = norm(b - p1)
-    d2 = norm(b - p2)
+    d1 = norm(b - p1);
+    d2 = norm(b - p2);
 
 end
