@@ -16,6 +16,7 @@ function [D] = onspan(v, W)
   p2 = U*U'*v;
 
   % norm of residual = distance
+  d1 = norm(v - p1);
   d2 = norm(v - p2);
     
 end
