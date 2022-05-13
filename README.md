@@ -1,6 +1,8 @@
 # linlab
 
-Custom Linear Algebra functions made with MATLAB. Includes infinite-dimension gram-schmidt and span-to-distance computations. 
+Custom Linear Algebra algorithms, including infinite-dimension gram-schmidt and span-to-distance computations.
+
+Made with MATLAB.
 
 Note: Computations are experimental and have not been second-hand reviewed, so use in academic work is not advised. With limited testing, functions appear to be accurate for arguments less than four dimensions. Problem and solution sets of four or more dimensions were not available at the time of testing.
 
